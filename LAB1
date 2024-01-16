@@ -1,0 +1,176 @@
+ashrestha@localhost home]$ cd ~
+[ashrestha@localhost ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[ashrestha@localhost ~]$ mkdir Docs
+[ashrestha@localhost ~]$ cd Docs
+[ashrestha@localhost Docs]$ ls
+[ashrestha@localhost Docs]$ mkdir COMP125, COMP123, COMP301
+[ashrestha@localhost Docs]$ ls
+COMP123,  COMP125,  COMP301
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ cd Labs
+bash: cd: Labs: No such file or directory
+[ashrestha@localhost COMP301]$ mkdir Labs
+[ashrestha@localhost COMP301]$ cd ~
+[ashrestha@localhost ~]$ ls
+Desktop  Docs  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[ashrestha@localhost ~]$ cd Docs
+[ashrestha@localhost Docs]$ cat > test1.txt
+echo Anmol Sagar Shrestha
+echo Computer Science is the best course
+[ashrestha@localhost Docs]$ cat test1.txt
+echo Anmol Sagar Shrestha
+echo Computer Science is the best course
+[ashrestha@localhost Docs]$ open test1.txt
+bash: open: command not found...
+[ashrestha@localhost Docs]$ xdg-open test1.txt
+[ashrestha@localhost Docs]$ ls
+COMP123,  COMP125,  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cp test1.txt ~/Docs/COMP301
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ ls
+Labs  test1.txt
+[ashrestha@localhost COMP301]$ cp test1.txt ~/Docs/COMP123 ~/Docs/COMP125
+cp: target '/home/ashrestha/Docs/COMP125' is not a directory
+[ashrestha@localhost COMP301]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ ls
+COMP123,  COMP125,  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cd COMP125
+bash: cd: COMP125: No such file or directory
+[ashrestha@localhost Docs]$ cd COMP123
+bash: cd: COMP123: No such file or directory
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ mv COMP123, COMP123
+[ashrestha@localhost Docs]$ cd COMP123
+[ashrestha@localhost COMP123]$ mv COMP125, COMP125
+mv: cannot stat 'COMP125,': No such file or directory
+[ashrestha@localhost COMP123]$ cdm-
+bash: cdm-: command not found...
+[ashrestha@localhost COMP123]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ mv COMP125, COMP125
+[ashrestha@localhost Docs]$ CD COMP301
+bash: CD: command not found...
+Similar command is: 'cd'
+[ashrestha@localhost Docs]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost COMP301]$ ls
+Labs  test1.txt
+[ashrestha@localhost COMP301]$ cp test1.txt ~/Docs/COMP125 ~/Docs/COMP123
+cp: -r not specified; omitting directory '/home/ashrestha/Docs/COMP125'
+[ashrestha@localhost COMP301]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ ls
+COMP123  COMP125  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cd COMP124=5
+bash: cd: COMP124=5: No such file or directory
+[ashrestha@localhost Docs]$ cd COMP125
+[ashrestha@localhost COMP125]$ CD -
+bash: CD: command not found...
+Similar command is: 'cd'
+[ashrestha@localhost COMP125]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost COMP125]$ ls
+[ashrestha@localhost COMP125]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ ls
+COMP123  COMP125  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cd COMP123
+[ashrestha@localhost COMP123]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost COMP123]$ ls
+test1.txt
+[ashrestha@localhost COMP123]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost COMP301]$ ls
+Labs  test1.txt
+[ashrestha@localhost COMP301]$ cp test1.txt ~/Docs/COMP125
+[ashrestha@localhost COMP301]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ cd COMP125
+[ashrestha@localhost COMP125]$ ls
+test1.txt
+[ashrestha@localhost COMP125]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ ls
+COMP123  COMP125  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cd -
+/home/ashrestha/Docs/COMP125
+[ashrestha@localhost COMP125]$ ls
+test1.txt
+[ashrestha@localhost COMP125]$ cd -
+/home/ashrestha/Docs
+[ashrestha@localhost Docs]$ ls
+COMP123  COMP125  COMP301  test1.txt
+[ashrestha@localhost Docs]$ cd COMP301
+[ashrestha@localhost COMP301]$ LS
+bash: LS: command not found...
+Similar command is: 'ls'
+[ashrestha@localhost COMP301]$ ls
+Labs  test1.txt
+[ashrestha@localhost COMP301]$ cd Labs
+[ashrestha@localhost Labs]$ ls
+[ashrestha@localhost Labs]$ cd -
+/home/ashrestha/Docs/COMP301
+[ashrestha@localhost COMP301]$ for i in {1..4}; do cp test1.txt ~/Docs/COMP301/Labs/"text${i}.txt"; done
+[ashrestha@localhost COMP301]$ ls
+Labs  test1.txt
+[ashrestha@localhost COMP301]$ cd Labs
+[ashrestha@localhost Labs]$ ls
+text1.txt  text2.txt  text3.txt  text4.txt
+[ashrestha@localhost Labs]$ cp test1.txt ~/Docs/COMP301/Labs/text5.txt
+cp: cannot stat 'test1.txt': No such file or directory
+[ashrestha@localhost Labs]$ cp text1.txt ~/Docs/COMP301/Labs/text5.txt
+[ashrestha@localhost Labs]$ ls
+text1.txt  text2.txt  text3.txt  text4.txt  text5.txt
+[ashrestha@localhost Labs]$ mv text5.txt script01.sh
+[ashrestha@localhost Labs]$ ls
+script01.sh  text1.txt  text2.txt  text3.txt  text4.txt
+[ashrestha@localhost Labs]$ ./script01.sh
+bash: ./script01.sh: Permission denied
+[ashrestha@localhost Labs]$ chmod +x script01.sh
+[ashrestha@localhost Labs]$ ./script01.sh
+Anmol Sagar Shrestha
+Computer Science is the best course
+[ashrestha@localhost Labs]$ ls -l
+total 20
+-rwxr-xr-x. 1 ashrestha ashrestha 67 Jan 16 11:46 script01.sh
+-rw-r--r--. 1 ashrestha ashrestha 67 Jan 16 11:44 text1.txt
+-rw-r--r--. 1 ashrestha ashrestha 67 Jan 16 11:44 text2.txt
+-rw-r--r--. 1 ashrestha ashrestha 67 Jan 16 11:44 text3.txt
+-rw-r--r--. 1 ashrestha ashrestha 67 Jan 16 11:44 text4.txt
+[ashrestha@localhost Labs]$ cd -
+/home/ashrestha/Docs/COMP301
+[ashrestha@localhost COMP301]$ cd - 
+/home/ashrestha/Docs/COMP301/Labs
+[ashrestha@localhost Labs]$ cd ~
+[ashrestha@localhost ~]$ ls
+Desktop  Docs  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[ashrestha@localhost ~]$ cd Docs
+[ashrestha@localhost Docs]$ ls *.txt
+test1.txt
+[ashrestha@localhost Docs]$ cd COMP301/Labs
+[ashrestha@localhost Labs]$ ls *.txt
+text1.txt  text2.txt  text3.txt  text4.txt
+[ashrestha@localhost Labs]$ -i text1.txt ./Labs
+bash: -i: command not found...
+[ashrestha@localhost Labs]$ cp -i text1.txt ./Labs
+[ashrestha@localhost Labs]$ ls
+Labs  script01.sh  text1.txt  text2.txt  text3.txt  text4.txt
+[ashrestha@localhost Labs]$ cd Labs
+bash: cd: Labs: Not a directory
+[ashrestha@localhost Labs]$ 
