@@ -1,0 +1,82 @@
+[ashrestha@localhost ~]$ dnf install curl
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+[ashrestha@localhost ~]$ sudo dnf install curl
+[ashrestha@localhost ~]$ curl https://cheat.sh/chmod
+ cheat.sheets:chmod 
+# chmod
+# Change file mode bits
+
+
+---------2--------------
+[ashrestha@localhost Documents]$ su xyrylle
+Password: 
+[xyrylle@localhost Documents]$ ls
+file1.txt  file2.txt  folder1  folder2  unixpractice
+[xyrylle@localhost Documents]$ whoami
+xyrylle
+
+--------3--------------------
+[ashrestha@localhost Documents]$ touch file{1..2}.txt
+[ashrestha@localhost Documents]$ mkdir folder1 folder2
+[ashrestha@localhost Documents]$ ls -l
+total 0
+-rw-r--r--. 1 ashrestha ashrestha 0 Jan 26 19:10 file1.txt
+-rw-r--r--. 1 ashrestha ashrestha 0 Jan 26 19:10 file2.txt
+drwxr-xr-x. 2 ashrestha ashrestha 6 Jan 26 19:11 folder1
+drwxr-xr-x. 2 ashrestha ashrestha 6 Jan 26 19:11 folder2
+
+[ashrestha@localhost Documents]$ sudo chown xyrylle file2.txt
+[sudo] password for ashrestha: 
+[ashrestha@localhost Documents]$ ls -l
+total 4
+-rw-r--r--. 1 ashrestha ashrestha 1 Jan 26 20:26 file1.txt
+-rw-r--r--. 1 xyrylle   ashrestha 0 Jan 26 19:10 file2.txt
+drwxr-xr-x. 2 ashrestha ashrestha 6 Jan 26 19:11 folder1
+drwxr-xr-x. 2 ashrestha ashrestha 6 Jan 26 19:11 folder2
+
+[ashrestha@localhost Documents]$ sudo chown xyrylle folder2
+[ashrestha@localhost Documents]$ ls -l
+total 4
+-rw-r--r--. 1 ashrestha ashrestha 1 Jan 26 20:26 file1.txt
+-rw-r--r--. 1 xyrylle   ashrestha 0 Jan 26 19:10 file2.txt
+drwxr-xr-x. 2 ashrestha ashrestha 6 Jan 26 19:11 folder1
+drwxr-xr-x. 2 xyrylle   ashrestha 6 Jan 26 19:11 folder2
+
+[xyrylle@localhost Documents]$ cat >> file2.txt
+modified
+^C
+[xyrylle@localhost Documents]$ cd folder2
+[xyrylle@localhost folder2]$ touch file21
+[xyrylle@localhost folder2]$ ls
+file21
+
+[xyrylle@localhost folder2]$ echo "modifie" > file21
+
+[xyrylle@localhost folder2]$ cd -
+bash: cd: /home/ashrestha/Documents: Permission denied
+[xyrylle@localhost folder2]$ su ashrestha
+Password: 
+[ashrestha@localhost folder2]$ cd -
+/home/ashrestha/Documents
+[ashrestha@localhost Documents]$ su xyrylle
+Password: 
+[xyrylle@localhost Documents]$ cd folder1
+[xyrylle@localhost folder1]$ cat > newfile
+bash: newfile: Permission denied
+
+[xyrylle@localhost Documents]$ cat >> file1.txt
+echo Anmol Sagar Shrestha
+echo Linux is the best course
+^C
+
+[ashrestha@localhost Documents]$ sudo ./file1.txt
+Anmol Sagar Shrestha
+Linux is the best course
+[ashrestha@localhost Documents]$ 
+
+
+
+
+
+
+
