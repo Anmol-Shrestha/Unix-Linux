@@ -1,0 +1,170 @@
+[ashrestha@localhost ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[ashrestha@localhost ~]$ cd Documents
+[ashrestha@localhost Documents]$ mkdir assignment2
+[ashrestha@localhost Documents]$ ls
+assignment2  file1.txt  file2.txt  folder1  folder2  unixpractice
+[ashrestha@localhost Documents]$ cd assignment2
+
+//Task 1
+
+[ashrestha@localhost assignment2]$ ls
+week4.zip
+[ashrestha@localhost assignment2]$ unzip week4.zip
+Archive:  week4.zip
+  inflating: chap1                   
+  inflating: courses1                
+  inflating: courses2                
+  inflating: courses3                
+  inflating: courses4                
+  inflating: grocery                 
+  inflating: professors              
+  inflating: students                
+[ashrestha@localhost assignment2]$ ls
+chap1     courses2  courses4  professors  week4.zip
+courses1  courses3  grocery   students
+[ashrestha@localhost assignment2]$ rm week4.zip
+[ashrestha@localhost assignment2]$ ls
+chap1  courses1  courses2  courses3  courses4  grocery  professors  students
+
+//TASK 2
+
+[ashrestha@localhost assignment2]$ file *
+chap1:      UTF-8 Unicode text, with CRLF line terminators
+courses1:   ASCII text
+courses2:   ASCII text
+courses3:   ASCII text
+courses4:   ASCII text
+grocery:    ASCII text
+professors: ASCII text, with CRLF line terminators
+students:   Microsoft Excel 2007+
+
+//TASK 2 - a) Displaying the binary file 
+
+[ashrestha@localhost assignment2]$ grep -rIL .
+students
+
+//TASK 2 - b) Displaying the text file 
+
+[ashrestha@localhost assignment2]$ file * | grep ":.* text"
+chap1:      UTF-8 Unicode text, with CRLF line terminators
+courses1:   ASCII text
+courses2:   ASCII text
+courses3:   ASCII text
+courses4:   ASCII text
+grocery:    ASCII text
+professors: ASCII text, with CRLF line terminators
+
+//TASK 3
+
+[ashrestha@localhost assignment2]$ ls
+chap1  courses1  courses2  courses3  courses4  grocery  professors  students
+
+//TASK 3 - a.1
+
+[ashrestha@localhost assignment2]$ tr "\t" " " < grocery > grocery.txt
+[ashrestha@localhost assignment2]$ ls
+chap1     courses2  courses4  grocery.txt  students
+courses1  courses3  grocery   professors
+
+//TASK 3 a.2
+
+[ashrestha@localhost assignment2]$ cat grocery.txt
+banana 4 january 0.59 creamy
+apricot 2 september 1.56 tart
+avocado 3 september 1.25 creamy
+blueberry 4 january 3.59 sweet/tart
+cantaloupe 1 july 4.99 melon
+mango 8 april 1.99 sweet
+peach 10 october 1.99 tart
+orange 3 february 1.29 sweet/tart
+grapefruit 3 january 1.19 bitter
+apple 6 march 0.79 sweet/tart
+dates 20 march 0.25 nutty
+fig 12 november 0.19 nutty
+watermelon 8 june 1.99 juicy
+plum 6 may 1.25 juicy
+grape 30 april 3.99 juicy
+lemon 4 december 1.99 tart
+lime 10 july 1.99 tart
+kiwi 12 august 0.99 tart
+strawberry 8 january 3.99 sweet
+pineapple 8 april 1.99 sweet
+ 
+
+
+
+//TASK 3 - b.1
+
+[ashrestha@localhost assignment2]$ tr "\t" "," < grocery > grocery.csv
+[ashrestha@localhost assignment2]$ ls
+chap1     courses2  courses4  grocery.csv  professors
+courses1  courses3  grocery   grocery.txt  students
+
+//TASK 3 - b.2
+[ashrestha@localhost assignment2]$ cat grocery.csv
+banana,4,january,0.59,creamy
+apricot,2,september,1.56,tart
+avocado,3,september,1.25,creamy
+blueberry,4,january,3.59,sweet/tart
+cantaloupe,1,july,4.99,melon
+mango,8,april,1.99,sweet
+peach,10,october,1.99,tart
+orange,3,february,1.29,sweet/tart
+grapefruit,3,january,1.19,bitter
+apple,6,march,0.79,sweet/tart
+dates,20,march,0.25,nutty
+fig,12,november,0.19,nutty
+watermelon,8,june,1.99,juicy
+plum,6,may,1.25,juicy
+grape,30,april,3.99,juicy
+lemon,4,december,1.99,tart
+lime,10,july,1.99,tart
+kiwi,12,august,0.99,tart
+strawberry,8,january,3.99,sweet
+pineapple,8,april,1.99,sweet
+
+
+//TASK 4 - wc command
+[ashrestha@localhost assignment2]$ wc -l grocery
+20 grocery
+[ashrestha@localhost assignment2]$ wc -c grocery
+571 grocery
+[ashrestha@localhost assignment2]$ wc -l grocery chap1 professors courses1
+  20 grocery
+   9 chap1
+ 138 professors
+  55 courses1
+ 222 total
+
+//TASK 4 e) XYRYLLE
+//Task 5 XYRYLLE
+
+
+//TASK 7
+[ashrestha@localhost assignment2]$ sort -t',' -k3M,3 grocery.csv
+banana,4,january,0.59,creamy
+blueberry,4,january,3.59,sweet/tart
+grapefruit,3,january,1.19,bitter
+strawberry,8,january,3.99,sweet
+orange,3,february,1.29,sweet/tart
+apple,6,march,0.79,sweet/tart
+dates,20,march,0.25,nutty
+grape,30,april,3.99,juicy
+mango,8,april,1.99,sweet
+pineapple,8,april,1.99,sweet
+plum,6,may,1.25,juicy
+watermelon,8,june,1.99,juicy
+cantaloupe,1,july,4.99,melon
+lime,10,july,1.99,tart
+kiwi,12,august,0.99,tart
+apricot,2,september,1.56,tart
+avocado,3,september,1.25,creamy
+peach,10,october,1.99,tart
+fig,12,november,0.19,nutty
+lemon,4,december,1.99,tart
+[ashrestha@localhost assignment2]$ 
+
+//TASK 7 B
+[ashrestha@localhost assignment2]$ sort -t',' -k4,4nr grocery.csv | head -n 1 | awk -F',' '{print $1}'
+cantaloupe
