@@ -138,7 +138,34 @@ pineapple,8,april,1.99,sweet
  222 total
 
 //TASK 4 e) XYRYLLE
+[ashrestha@localhost assignment2]$ cut -d $'\t' -f 4 professors > faculties.txt | sort faculties.txt | uniq | wc -l
+2
+
 //Task 5 XYRYLLE
+[ashrestha@localhost assignment2]$ cut -f 1,2 professors | grep -i 'mohammad'
+Mohammad 	Anwar Hossain
+Mohammad 	Saiful Islam
+Mohammad 	Iqbal Khan
+[ashrestha@localhost assignment2]$ 
+
+//TASK 5B Context: assiging 3rd field into a new file numbercontracts->use grep and wc to figure out how many contracts are there
+[ashrestha@localhost assignment2]$ cut -d $'\t' -f 3 professors > numbercontracts
+[ashrestha@localhost assignment2]$ grep -i 'contract' numbercontracts | wc -l
+118
+
+//TASK 6 XYRYLLE CONTEXT: I used the cut command to extract field into newprofessors->targeted the last field and added @gmail.com and displayed it
+[ashrestha@localhost assignment2]$ cut -f 1,2,5 professors > newprofessors | awk '{OFS="\t"; $NF=$NF"@gmail.com"; print }' newprofessors 
+Tom	Tsiliopoulos	tts6328@gmail.com
+Liliya	Artyukh	lar1115@gmail.com
+Janani	Tharmaseelan	jth5620@gmail.com
+Vaishali	Chandrashekar	Siddeshwar	vch1094@gmail.com
+Krunal	Sukhwani	ksu8851@gmail.com
+Raed	Karim	rka6970@gmail.com
+Tanya	Gokhshteyn	tgo6745@gmail.com
+Sujeet	Lohan	slo7234@gmail.com
+Monica	Monica	mmo4633@gmail.com
+Parimala	Alva	pal1504@gmail.com
+Syeda	Nuzhat	Zaman	snu9689@gmail.com
 
 
 //TASK 7
