@@ -1,5 +1,6 @@
 TASK-0
 THE TASK READ "Nothing need to be copied in your submission file for this task."
+-----------------------------------------------------------------------------------
 
 TASK-1
 --q1.sh--
@@ -15,10 +16,124 @@ TASK-1
 7.george
 8.q1.sh
 9.q2.sh
-
+-----------------------------------------------------------------------------------
 TASK-2
---q2.sh--
+Create a script called q2.sh that correctly identifies which items in the current
+folder are directories or regular files.
+
 [anmol@localhost lab05]$ nano q2.sh
 [anmol@localhost lab05]$ chmod +x q2.sh
 [anmol@localhost lab05]$ ./q2.sh
 abe.txt is a file.
+bob.doc.txt is a file.
+cloe.txt.doc is a file.
+dave.txt is a file.
+edward is a file.
+floyd.txt is a file.
+george is a directory.
+q1.sh is a file.
+q2.sh is a file.
+q3.sh is a file.
+q4.sh is a file.
+-----------------------------------------------------------------------------------
+TASK-3
+Create a script called q3.sh that displays the extension of all the files in the current
+folder.
+[anmol@localhost lab05]$ nano q3.sh
+[anmol@localhost lab05]$ chmod +x q3.sh
+[anmol@localhost lab05]$ ./q3.sh
+Extension: txt 
+Extension: doc.txt 
+Extension: txt.doc 
+Extension: txt 
+Extension: edward 
+Extension: txt 
+Extension: george 
+Extension: sh 
+Extension: sh 
+Extension: sh 
+
+-----------------------------------------------------------------------------------
+
+TASK-4
+Create a script call q4.sh that displays all the items in the current folder and also
+specify if it is empty or non-empty
+
+[anmol@localhost lab05]$ nano q4.sh
+[anmol@localhost lab05]$ chmod +x q4.sh
+[anmol@localhost lab05]$ ./q4.sh
+abe.txt
+bob.doc.txt
+cloe.txt.doc
+dave.txt
+edward
+floyd.txt
+george
+q1.sh
+q2.sh
+q3.sh
+q4.sh
+abe.txt is non-empty
+bob.doc.txt is non-empty
+cloe.txt.doc is non-empty
+dave.txt is empty
+edward is non-empty
+floyd.txt is non-empty
+george is non-empty
+q1.sh is non-empty
+q2.sh is non-empty
+q3.sh is non-empty
+q4.sh is non-empty
+
+-----------------------------------------------------------------------------------
+
+TASK 5
+Create a script called q5.sh that processes all the items in the current directory.
+The action performed will be based on the properties of the item.
+
+a. Directories are skipped
+
+b. All empty files are skipped.
+
+c. All files that does not have a txt extension are skipped.
+
+d. All files not ok by the user are skipped.
+
+e. All other files are copied to a backup folder created by this script.
+--------------------------------------------------------------------------
+[anmol@localhost lab05]$ nano q5.sh
+[anmol@localhost lab05]$ chmod +x q5.sh
+[anmol@localhost lab05]$ ./q5.sh
+do you want this file abe.txt to be backed up y/n ? 
+y
+....copying file abe.txt into backup
+do you want this file bob.doc.txt to be backed up y/n ? 
+y
+....copying file bob.doc.txt into backup
+do you want this file cloe.txt.doc to be backed up y/n ? 
+y
+....copying file cloe.txt.doc into backup
+skipping empty file dave.txt
+do you want this file edward to be backed up y/n ? 
+n
+skipping file edward based on user response. 
+do you want this file floyd.txt to be backed up y/n ? 
+y
+....copying file floyd.txt into backup
+Skipping directory george
+do you want this file q1.sh to be backed up y/n ? 
+y
+....copying file q1.sh into backup
+do you want this file q2.sh to be backed up y/n ? 
+n
+skipping file q2.sh based on user response. 
+do you want this file q3.sh to be backed up y/n ? 
+n
+skipping file q3.sh based on user response. 
+do you want this file q4.sh to be backed up y/n ? 
+n
+skipping file q4.sh based on user response. 
+do you want this file q5.sh to be backed up y/n ? 
+n
+skipping file q5.sh based on user response. 
+
